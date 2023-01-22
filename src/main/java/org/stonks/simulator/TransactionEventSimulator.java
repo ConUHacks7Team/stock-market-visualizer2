@@ -1,4 +1,6 @@
-package org.stonks;
+package org.stonks.simulator;
+
+import org.stonks.TransactionListener;
 
 import java.util.ArrayList;
 import java.util.List;

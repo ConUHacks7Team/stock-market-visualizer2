@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5a2333c-8e51-4afd-bcf6-d74b9b1250eb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/stonks/simulator/TransactionReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/stonks/Responder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/stonks/simulator/MarketSimulator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/stonks/simulator/SimulatedClock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/stonks/TransactionEventSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/stonks/simulator/TransactionEventSimulator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/stonks/TransactionReader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/stonks/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/stonks/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/stonks/TransactionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/stonks/TransactionListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/stonks/simulator/TransactionEventSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/stonks/simulator/TransactionEventEmitter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/stonks/simulator/TransactionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/stonks/simulator/TransactionReader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,9 +54,30 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.stonks.Main" />
+      <module name="stock-market-visualizer2.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.stonks.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -62,7 +86,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1674414378481</updated>
-      <workItem from="1674414379682" duration="665000" />
+      <workItem from="1674414379682" duration="9860000" />
     </task>
     <servers />
   </component>

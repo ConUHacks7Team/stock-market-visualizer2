@@ -10,16 +10,14 @@ import java.io.FileNotFoundException;
 
 public class TransactionReader {
     final private String transacton_folder_path = "./transactions/";
-    public JSONArray transactionBook;
-    public TransactionReader(){
-        transactionBook = loadSaveFile();
-    }
+    public JSONArray transactionBook = loadSaveFile();
+    public TransactionReader(){}
 
 
     private JSONArray loadSaveFile() {
         JSONArray jsonArray = new JSONArray();
         try {
-            JSONTokener parser = new JSONTokener(new FileInputStream(transacton_folder_path));
+            JSONTokener parser = new JSONTokener(new FileInputStream(transacton_folder_path+"TSXData.json"));
             jsonArray = (JSONArray) parser.nextValue();
         } catch (FileNotFoundException e){
             System.err.println("File non-existing.");

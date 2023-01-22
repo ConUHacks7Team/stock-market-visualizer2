@@ -1,5 +1,10 @@
 package org.stonks;
 
+import org.json.JSONObject;
+
 public interface TransactionListener {
-    void onTradeEvent();
+    void onTransactionTradeEvent(JSONObject transactionJson);
+
+    void onTransactionGenericEvent(JSONObject transactionJson);
+
 }

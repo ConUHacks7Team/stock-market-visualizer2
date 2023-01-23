@@ -7,14 +7,21 @@ import org.json.JSONTokener;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Stack;
 
 public class TransactionReader {
-    final private String transacton_folder_path = "./transactions/";
-    public JSONArray transactionBook = loadSaveFile();
+    static final private String transacton_folder_path = "./transactions/";
+    static public  JSONArray transactionBook = loadSaveFile();
+
+    static public HashMap<String, ArrayList<JSONObject>> repertoryStockTradeHistory = new HashMap<>();
+
+
     public TransactionReader(){}
 
 
-    private JSONArray loadSaveFile() {
+    static private JSONArray loadSaveFile() {
         JSONArray jsonArray = new JSONArray();
         try {
             JSONTokener parser = new JSONTokener(new FileInputStream(transacton_folder_path+"TSXData.json"));

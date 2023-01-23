@@ -12,7 +12,7 @@ public class SimulatedClock{
     public Clock clock;
     public Clock generateClock(){
         LocalDateTime currentTime = LocalDateTime.now();
-        LocalDateTime wantedStartTime = LocalDateTime.parse("2023-01-06 09:28:00.000000000", dtf_stock);
+        LocalDateTime wantedStartTime = LocalDateTime.parse("2023-01-06 09:30:00.000000000", dtf_stock);
 
         Duration time_diff = Duration.between(currentTime, wantedStartTime);
 

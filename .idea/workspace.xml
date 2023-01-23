@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5a2333c-8e51-4afd-bcf6-d74b9b1250eb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/stonks/Responder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/stonks/simulator/MarketSimulator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/stonks/simulator/SimulatedClock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/stonks/messagingwebsocket/ExchangeSocketHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/stonks/messagingwebsocket/StockPriceSocketHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/stonks/messagingwebsocket/WebSocketConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/stonks/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/stonks/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/stonks/TransactionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/stonks/TransactionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/stonks/simulator/TransactionEventSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/stonks/simulator/TransactionEventEmitter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/stonks/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/stonks/SimulatorApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/stonks/simulator/MarketSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/stonks/simulator/MarketSimulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/stonks/simulator/SimulatedClock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/stonks/simulator/SimulatedClock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/stonks/simulator/TransactionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/stonks/simulator/TransactionReader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +25,37 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="stock-market-visualizer2" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="stock-market-visualizer2" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="stock-market-visualizer2" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -46,6 +79,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -58,9 +95,14 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.stonks.Main" />
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\GitHub\stock-market-visualizer2\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.SimulatorApplication">
+    <configuration name="SimulatorApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.stonks.SimulatorApplication" />
       <module name="stock-market-visualizer2.main" />
       <extension name="coverage">
         <pattern>
@@ -72,9 +114,60 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="stock-market-visualizer2 [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="assemble" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="stock-market-visualizer2 [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="SimulatorApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="stock-market-visualizer2.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.stonks.SimulatorApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Gradle.stock-market-visualizer2 [build]" />
+        <item itemvalue="Gradle.stock-market-visualizer2 [assemble]" />
+        <item itemvalue="Application.SimulatorApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -86,7 +179,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1674414378481</updated>
-      <workItem from="1674414379682" duration="9860000" />
+      <workItem from="1674414379682" duration="17270000" />
     </task>
     <servers />
   </component>

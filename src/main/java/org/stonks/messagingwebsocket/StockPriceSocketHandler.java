@@ -11,14 +11,17 @@ import org.stonks.simulator.TransactionReader;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class StockPriceSocketHandler extends TextWebSocketHandler implements TransactionListener {
-    WebSocketSession webSocketSession;
-    String subsciption_symbol = "ALL";
+    HashMap<WebSocketSession, String> webSocketSessionManager = new HashMap<>();
+    private final String DEFAULT_SUBSCRIPTION_SYMBOL = "ALL";
+
 
     @Override
     public void afterConnectionEstablished(WebSocketSession session){
-        this.webSocketSession = session;
+        webSocketSessionManager.put(session, DEFAULT_SUBSCRIPTION_SYMBOL);
         TransactionEventEmitter.addListener(this);
     }
 
@@ -27,40 +30,65 @@ public class StockPriceSocketHandler extends TextWebSocketHandler implements Tra
         String payload = message.getPayload();
         try {
             JSONObject jsonRequest = new JSONObject(payload);
-            this.subsciption_symbol = jsonRequest.getString("subscription_symbol");
+            webSocketSessionManager.put(session, jsonRequest.getString("subscription_symbol"));
+            // send history of new stock
+            if (!jsonRequest.getString("subscription_symbol").equals("ALL")){
+                this.sendStockTradeHistory(session, jsonRequest.getString("subscription_symbol"));
+            }
+
+//            // EXTRA POUR GET LHISORIQUE COMPLET
+//            if ((subsciption_symbol.equals("SUU"))) {
+//                for (ArrayList<JSONObject> arrayList : new ArrayList<>(TransactionReader.repertoryStockTradeHistory.values())) {
+//                    for (int i = 0; i < arrayList.size(); i++) {
+//                        session.sendMessage(new TextMessage(arrayList.get(i).toString()));
+//                    }
+//                }
+//                this.subsciption_symbol= "";
+//            }
+
         } catch (JSONException e){
             System.err.println("Bad Request");
             session.sendMessage(new TextMessage("BAD REQUEST"));
         }
 
-        // EXTRA POUR GET LHISORIQUE
-        if ((subsciption_symbol.equals("SUU"))) {
-            this.subsciption_symbol= "A";
-            for (ArrayList<JSONObject> arrayList : new ArrayList<>(TransactionReader.repertoryStockTradeHistory.values())) {
-                for (int i = 0; i < arrayList.size(); i++) {
-                    session.sendMessage(new TextMessage(arrayList.get(i).toString()));
+    }
+
+    private void sendStockTradeHistory(WebSocketSession session, String subsciption_symbol) throws IOException {
+        try {
+            ArrayList<JSONObject> ptrStock = TransactionReader.repertoryStockTradeHistory.get(subsciption_symbol);
+            ArrayList<JSONObject> stockHistory = new ArrayList<>(ptrStock);
+            for (JSONObject transaction: stockHistory) {
+                if (transaction.getString("MessageType").equals("Trade")){
+                    session.sendMessage(new TextMessage(transaction.toString()));
                 }
             }
-            this.subsciption_symbol= "";
+        } catch (NullPointerException e){
+            System.err.println("Stock doesnt exist yet");
         }
 
-        //session.sendMessage(new TextMessage(jsonResponse.toString()));
+
     }
+
+
 
     @Override
     public void onTransactionTradeEvent(JSONObject transactionJson) {
 
-        if (webSocketSession.isOpen()){
-            try {
-                if (subsciption_symbol.equals("ALL")){
-                    this.webSocketSession.sendMessage(new TextMessage(transactionJson.toString()));
-                } else if (transactionJson.getString("Symbol").equals(subsciption_symbol)) {
-                    this.webSocketSession.sendMessage(new TextMessage(transactionJson.toString()));
+        for (Map.Entry<WebSocketSession, String> client: webSocketSessionManager.entrySet()) {
+            if (client.getKey().isOpen()){
+                try {
+                    if (client.getValue().equals("ALL")){
+                        client.getKey().sendMessage(new TextMessage(transactionJson.toString()));
+                    } else if (transactionJson.getString("Symbol").equals(client.getValue())) {
+                        client.getKey().sendMessage(new TextMessage(transactionJson.toString()));
+                    }
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
                 }
-            } catch (IOException e) {
-                throw new RuntimeException(e);
             }
         }
+
+
     }
 
     @Override

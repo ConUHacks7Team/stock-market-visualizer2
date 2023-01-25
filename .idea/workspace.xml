@@ -5,21 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5a2333c-8e51-4afd-bcf6-d74b9b1250eb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/stonks/messagingwebsocket/ExchangeSocketHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/stonks/messagingwebsocket/StockPriceSocketHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/stonks/messagingwebsocket/WebSocketConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/stonks/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/stonks/SimulatorApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/stonks/simulator/MarketSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/stonks/simulator/MarketSimulator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/stonks/simulator/SimulatedClock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/stonks/simulator/SimulatedClock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/stonks/simulator/TransactionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/stonks/simulator/TransactionReader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+    <option name="PARALLEL_COMPILATION" value="true" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -92,6 +88,8 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propCompiler",
+    "spring.configuration.checksum": "cf74c9c876afc1f3eb28600e85e5e8c5",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -180,10 +178,22 @@
       <option name="presentableId" value="Default" />
       <updated>1674414378481</updated>
       <workItem from="1674414379682" duration="17270000" />
+      <workItem from="1674497583857" duration="458000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

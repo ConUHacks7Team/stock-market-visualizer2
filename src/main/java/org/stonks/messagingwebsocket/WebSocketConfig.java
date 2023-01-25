@@ -10,8 +10,9 @@ import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry
 public class WebSocketConfig implements WebSocketConfigurer {
 
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
-        registry.addHandler(new StockPriceSocketHandler(), "/ws/stock");
-        registry.addHandler(new ExchangeSocketHandler(), "/ws/exchange");
+        registry.addHandler(new StockPriceSocketHandler(), "/ws/stock").setAllowedOrigins("*");
+        registry.addHandler(new StockPriceSocketHandler(), "/ws/stock").setAllowedOrigins("*").withSockJS();;
+        //registry.addHandler(new ExchangeSocketHandler(), "/ws/exchange");
     }
 
 

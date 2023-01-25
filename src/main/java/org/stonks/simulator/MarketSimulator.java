@@ -34,24 +34,24 @@ public class MarketSimulator extends Thread{
 
         for (int i = 0; i <  TransactionReader.transactionBook.length(); i++) {
 
-            JSONObject jsonObject = TransactionReader.transactionBook.getJSONObject(i);
-            String timeStamp = jsonObject.getString("TimeStamp");
+            JSONObject jsonTransaction = TransactionReader.transactionBook.getJSONObject(i);
+            String timeStamp = jsonTransaction.getString("TimeStamp");
             LocalDateTime transactionTime = SimulatedClock.timeStampToLocalDateTime(timeStamp);
 
             while (!transactionTime.isBefore(SimulatedClock.clockToLocalDateTime(simulator_clock))) {
 //                Thread.sleep(100);
             }
             //System.out.println("TRANSACTION IN : " + jsonObject.getString("Symbol") + " at " + timeStamp);
-            TransactionEventEmitter.onTransactionGeneric( jsonObject );
+            TransactionEventEmitter.onTransactionGeneric( jsonTransaction );
 
             // HashMap<String, ArrayList<JSONObject>> repertoryStockTradeHistory
-            String symbol_name = jsonObject.getString("Symbol");
+            String symbol_name = jsonTransaction.getString("Symbol");
             ArrayList<JSONObject> stockBook = TransactionReader.repertoryStockTradeHistory.get(symbol_name);
 
             if (stockBook == null){
                 stockBook = new ArrayList<>();
             }
-            stockBook.add(jsonObject);
+            stockBook.add(jsonTransaction);
             TransactionReader.repertoryStockTradeHistory.put(symbol_name, stockBook);
 
 //            transactionReader.repertoryStockTradeHistory.put();
